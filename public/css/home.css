@@ -1,0 +1,60 @@
+body.home-page {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(120deg, #ff6b6b, #f7d794, #1dd1a1, #54a0ff);
+    background-size: 400% 400%;
+    animation: bg-shift 12s ease-in-out infinite;
+}
+
+@keyframes bg-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.home-page .home {
+    text-align: center;
+}
+
+.home-page .home-card {
+    background: transparent;
+    border: 3px solid #000000;
+    border-radius: 12px;
+    padding: 32px 40px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    max-width: 520px;
+}
+
+.home-page .home h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0 0 24px;
+}
+
+.home-page .home .actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.home-page .home .actions a {
+    display: inline-block;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: inherit;
+    background: transparent;
+    border: 2px solid #222222;
+    border-radius: 6px;
+    font-weight: 600;
+}
