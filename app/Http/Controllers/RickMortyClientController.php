@@ -14,9 +14,6 @@ class RickMortyClientController extends Controller
         $this->api = env('RICK_API_URL');
     }
 
-    /**
-     * Display list of characters (from Project B)
-     */
     public function index()
     {
         $response = Http::get($this->api . '/rick-and-morties');
@@ -30,17 +27,11 @@ class RickMortyClientController extends Controller
         return view('characters.index', compact('characters'));
     }
 
-    /**
-     * Show create form
-     */
     public function create()
     {
         return view('characters.create');
     }
 
-    /**
-     * Send new character to Project B
-     */
     public function store(Request $request)
     {
         $data = $request->validate([
@@ -64,9 +55,6 @@ class RickMortyClientController extends Controller
         return back()->with('error', 'Failed to create character');
     }
 
-    /**
-     * Show edit form (get data from Project B)
-     */
     public function edit($id)
     {
         $response = Http::get($this->api . '/rick-and-morty/' . $id);
@@ -81,9 +69,6 @@ class RickMortyClientController extends Controller
         return view('characters.edit', compact('character'));
     }
 
-    /**
-     * Send update to Project B
-     */
     public function update(Request $request, $id)
     {
         $data = $request->validate([
@@ -107,9 +92,6 @@ class RickMortyClientController extends Controller
         return back()->with('error', 'Update failed');
     }
 
-    /**
-     * Send delete request to Project B
-     */
     public function destroy($id)
     {
         $response = Http::delete($this->api . '/rick-and-morty/' . $id);
