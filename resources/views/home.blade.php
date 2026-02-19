@@ -13,6 +13,7 @@
             <div class="actions">
                 <a href="{{ route('product.index') }}">Product Index</a>
                 <a href="{{ route('product.create') }}" class="secondary">Create Product</a>
+                <a href="{{ route('characters.index') }}"class="btn btn-success">Rick n Morty</a>
             </div>
         </div>
 	</main>
